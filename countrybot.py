@@ -160,7 +160,7 @@ def get_country(message):
     game(message)
 
 
-
+@bot.send_message(message.chat.id, "Неправильно. Это страна: " + name_country[0][0])
    
 @bot.message_handler(commands=['game'])
 def game(message):
