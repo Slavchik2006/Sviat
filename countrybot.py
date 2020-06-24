@@ -143,21 +143,25 @@ def get_country(message):
         lock.acquire(True)
         countryid = cursor.execute("SELECT idcountry FROM chat_id WHERE chatid = ?", [message.chat.id]).fetchall()
     finally:
-        lock.release()     
-    name_country = dbHelper.get_country_name_by_id(countryid[0][0])
-    if message.text.lower()  == name_country[0][0].lower():
-        bot.send_message(message.chat.id, "Правильно")
-        dbHelper.increment_user_score(message.chat.id) 
-    elif message.text.lower() != name_country[0][0].lower():
-        bot.send_message(message.chat.id, "Неправильно Это страна :"  + name_country[0][0])
-    print(name_country)
-    try:
-        lock.acquire(True)
-        cursor.execute("DELETE FROM chat_id WHERE chatid = ?", [message.chat.id])
-        conn.commit()
-    finally:
-        lock.release()    
-    game(message)
+        lock.release()
+    print(countryid)
+    if countryid is None:
+        print("error")
+    else:     
+        name_country = dbHelper.get_country_name_by_id(countryid[0][0])
+        if message.text.lower()  == name_country[0][0].lower():
+            bot.send_message(message.chat.id, "Правильно")
+            dbHelper.increment_user_score(message.chat.id) 
+        elif message.text.lower() != name_country[0][0].lower():
+            bot.send_message(message.chat.id, "Неправильно Это страна :"  + name_country[0][0])
+        print(name_country)
+        try:
+            lock.acquire(True)
+            cursor.execute("DELETE FROM chat_id WHERE chatid = ?", [message.chat.id])
+            conn.commit()
+        finally:
+            lock.release()    
+        game(message)
 
 
 
