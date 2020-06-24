@@ -1,1 +1,1 @@
-"bot: python countrybot.py" 
+bot: python countrybot.py
