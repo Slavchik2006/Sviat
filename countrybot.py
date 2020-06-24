@@ -149,7 +149,7 @@ def get_country(message):
         bot.send_message(message.chat.id, "Правильно")
         dbHelper.increment_user_score(message.chat.id) 
     elif message.text.lower() != name_country[0][0].lower():
-        bot.send_message(message.chat.id, "Неправильно Это страна":  + name_country[0][0]))
+        bot.send_message(message.chat.id, "Неправильно Это страна :"  + name_country[0][0]))
     print(name_country)
     try:
         lock.acquire(True)
