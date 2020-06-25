@@ -192,7 +192,7 @@ def get_country(message):
     finally:
         lock.release()
     print(countryid)
-    if countryid is None:
+    if len(countryid) == 0:
         print("error")
     else:     
         name_country = dbHelper.get_country_name_by_id(countryid[0][0])
@@ -200,7 +200,7 @@ def get_country(message):
             bot.send_message(message.chat.id, "Правильно")
             dbHelper.increment_user_score(message.chat.id) 
         elif message.text.lower() != name_country[0][0].lower():
-            bot.send_message(message.chat.id, "Неправильно Это страна :"  + name_country[0][0])
+            bot.send_message(message.chat.id, "Неправильно Это страна : "  + name_country[0][0])
         print(name_country)
         try:
             lock.acquire(True)
