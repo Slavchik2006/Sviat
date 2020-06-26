@@ -106,7 +106,27 @@ countries = [(1, "Албания", "images_for_project/flags/flag_of_albania"),
              (95, "Туркменистан", "images_for_project/flags/flag_of_turkmenistan"),
              (96, "Узбекистан", "images_for_project/flags/flag_of_uzbekistan"),
              (97, "Вьетнам", "images_for_project/flags/flag_of_vietnam"),
-             (98, "Йемен", "images_for_project/flags/flag_of_yemen"),]
+             (98, "Йемен", "images_for_project/flags/flag_of_yemen"),
+             (99, "Антигуа и Барбуда", "images_for_project/flags/flag_of_antigua"),
+             (100, "Багамские острова", "images_for_project/flags/flag_of_bagames"),
+             (101, "Барбадос", "images_for_project/flags/flag_of_barbados"),
+             (102, "Белиз", "images_for_project/flags/flag_of_beliz"),
+             (103, "Коста-Рика", "images_for_project/flags/flag_of_costarica"),
+             (104, "Куба", "images_for_project/flags/flag_of_cuba"),
+             (105, "Доминика", "images_for_project/flags/flag_of_dominika"),
+             (106, "Доминиканская республика", "images_for_project/flags/flag_of_dominikana"),
+             (107, "Гренада", "images_for_project/flags/flag_of_grenada"),
+             (108, "Гаити", "images_for_project/flags/flag_of_haiti"),
+             (109, "Гондурас", "images_for_project/flags/flag_of_honduras"),
+             (110, "Гватемала", "images_for_project/flags/flag_of_hvatemala"),
+             (111, "Ямайка", "images_for_project/flags/flag_of_jamaica"),
+             (112, "Никарагуа", "images_for_project/flags/flag_of_nikaragua"),
+             (113, "Панама", "images_for_project/flags/flag_of_panama"),
+             (114, "Сент-Китс и Невис", "images_for_project/flags/flag_of_sentkits"),
+             (115, "Сент-Люсия", "images_for_project/flags/flag_of_sentlucia"),
+             (116, "Сент-Винсент и Гренадины", "images_for_project/flags/flag_of_sentvincent"),
+             (117, "Тринидад и Тобаго", "images_for_project/flags/flag_of_trinidad"),
+             (118, "Сальвадор", "images_for_project/flags/flag_of_salvador"),]
 bot = telebot.TeleBot('1214576878:AAGObjbzLmXg5dqLUfgRrFOABtb74ZaJvYo')
 
 country = cursor.execute("SELECT * FROM countries").fetchall()
