@@ -137,11 +137,11 @@ if len(country) == 0:
 class UserModel:
     def __init__(self, database_row):
         self.chat_id = database_row[0]
-        self.username = database_row[1]
+        self.first_name = database_row[1]
         self.score = database_row[2]
 
     def get_string_representation(self):
-        return self.username + " " + str(self.score)
+        return self.first_name + " " + str(self.score)
 
 
 class DatabaseHelper:
